@@ -14,7 +14,7 @@ import { HomeIcon } from '@heroicons/react/solid';
 
 const Header: NextPage = () => {
   return (
-    <div>
+    <div className='sticky top-0 z-50 border-b bg-white shadow-sm'>
       <div className='mx-5 flex max-w-6xl justify-between lg:mx-auto'>
         {/* Left */}
         <div className='relative hidden w-24 cursor-pointer lg:inline-grid'>
