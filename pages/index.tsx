@@ -5,7 +5,7 @@ import Feed from './../components/Feed';
 
 const Home: NextPage = () => {
   return (
-    <div className=''>
+    <div className='h-screen overflow-y-scroll bg-gray-50 scrollbar-hide'>
       <Head>
         <title>Instagram 2.0 | Durrez Ahmed</title>
         <link rel='icon' href='/insta-logo.png' />
