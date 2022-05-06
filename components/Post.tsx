@@ -49,6 +49,10 @@ function Post({
       </div>
 
       {/* Captions */}
+      <p className='truncate p-5'>
+        <span className='mr-1 font-bold'>{username} </span>
+        {caption}
+      </p>
 
       {/* Comments */}
 
