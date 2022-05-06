@@ -11,8 +11,19 @@ import {
   MenuIcon,
 } from '@heroicons/react/outline';
 import { HomeIcon } from '@heroicons/react/solid';
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 const Header: NextPage = () => {
+  const { data: session } = useSession();
+
+  const handleSignIn = () => {
+    signIn();
+  };
+
+  const handleSignOut = () => {
+    signOut();
+  };
+
   return (
     <div className='sticky top-0 z-50 border-b bg-white shadow-sm'>
       <div className='mx-5 flex max-w-6xl justify-between lg:mx-auto'>
@@ -54,22 +65,29 @@ const Header: NextPage = () => {
           <HomeIcon className='navBtn' />
           <MenuIcon className='h-6 cursor-pointer md:hidden' />
 
-          <div className='navBtn relative'>
-            <PaperAirplaneIcon className='navBtn rotate-45' />
-            <div className='absolute -top-1 -right-2 flex h-5 w-5 animate-pulse items-center justify-center rounded-full bg-red-500 text-xs text-white'>
-              3
-            </div>
-          </div>
+          {session ? (
+            <>
+              <div className='navBtn relative'>
+                <PaperAirplaneIcon className='navBtn rotate-45' />
+                <div className='absolute -top-1 -right-2 flex h-5 w-5 animate-pulse items-center justify-center rounded-full bg-red-500 text-xs text-white'>
+                  3
+                </div>
+              </div>
 
-          <PlusCircleIcon className='navBtn' />
-          <UserGroupIcon className='navBtn' />
-          <HeartIcon className='navBtn' />
+              <PlusCircleIcon className='navBtn' />
+              <UserGroupIcon className='navBtn' />
+              <HeartIcon className='navBtn' />
 
-          <img
-            src='/profile.jpg'
-            alt='profile picture'
-            className='h-10 w-10 cursor-pointer rounded-full'
-          />
+              <img
+                onClick={() => handleSignOut()}
+                src={session?.user?.image!}
+                alt='profile picture'
+                className='h-10 w-10 cursor-pointer rounded-full'
+              />
+            </>
+          ) : (
+            <button onClick={() => handleSignIn()}>Sign In</button>
+          )}
         </div>
       </div>
     </div>
