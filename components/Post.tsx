@@ -57,6 +57,15 @@ function Post({
       {/* Comments */}
 
       {/* Input Box */}
+      <form className='flex items-center p-4'>
+        <EmojiHappyIcon className='h-7' />
+        <input
+          type='text'
+          placeholder='Add a comment...'
+          className='flex-1 border-none outline-none focus:ring-0'
+        />
+        <button className='font-semibold text-blue-400'>Post</button>
+      </form>
     </div>
   );
 }
