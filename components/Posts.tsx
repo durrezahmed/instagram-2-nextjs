@@ -2,14 +2,14 @@ import Post from './Post';
 
 const posts = [
   {
-    id: '123',
+    id: '1',
     username: 'durrez',
     userImg: '/profile.jpg',
     img: '/profile.jpg',
     caption: 'This is a caption',
   },
   {
-    id: '123',
+    id: '2',
     username: 'durrez',
     userImg: '/profile.jpg',
     img: '/profile.jpg',
