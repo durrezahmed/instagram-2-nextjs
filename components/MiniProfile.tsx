@@ -1,4 +1,8 @@
+import { singOut, useSession } from 'next-auth/react';
+
 function MiniProfile() {
+  const { data: session } = useSession();
+
   return (
     <div className='mt-8 ml-10 flex items-center justify-between'>
       <img
