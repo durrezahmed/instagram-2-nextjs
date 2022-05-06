@@ -10,4 +10,13 @@ export default NextAuth({
     }),
     // ...add more providers here
   ],
+  pages: {
+    signIn: '/auth/signin',
+  },
+
+  // theme: {
+  //   logo: '/profile.jpg',
+  //   brandColor: '#F13276',
+  //   colorScheme: 'auto',
+  // },
 });
