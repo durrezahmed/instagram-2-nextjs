@@ -6,6 +6,7 @@ import {
   HeartIcon,
   PaperAirplaneIcon,
 } from '@heroicons/react/outline';
+import { HeartIcon as HeartIconFilled } from '@heroicons/react/solid';
 
 function Post({
   id,
@@ -37,6 +38,15 @@ function Post({
       <img src={img} className='w-full object-cover' alt='' />
 
       {/* Buttons */}
+      <div className='flex justify-between px-4 pt-4'>
+        <div className='flex space-x-4 '>
+          <HeartIcon className='btn' />
+          <ChatIcon className='btn' />
+          <PaperAirplaneIcon className='btn' />
+        </div>
+
+        <BookmarkIcon className='btn' />
+      </div>
 
       {/* Captions */}
 
