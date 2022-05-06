@@ -34,6 +34,7 @@ function Post({
       </div>
 
       {/* Image */}
+      <img src={img} className='w-full object-cover' alt='' />
 
       {/* Buttons */}
 
