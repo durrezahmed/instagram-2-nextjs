@@ -7,6 +7,7 @@ import {
   PaperAirplaneIcon,
 } from '@heroicons/react/outline';
 import { HeartIcon as HeartIconFilled } from '@heroicons/react/solid';
+import { useSession } from 'next-auth/react';
 
 function Post({
   id,
@@ -21,6 +22,8 @@ function Post({
   img: any;
   caption: any;
 }) {
+  const { data: session } = useSession();
+
   return (
     <div className='my-7 rounded-sm border bg-white'>
       {/* Header */}
@@ -38,15 +41,17 @@ function Post({
       <img src={img} className='w-full object-cover' alt='' />
 
       {/* Buttons */}
-      <div className='flex justify-between px-4 pt-4'>
-        <div className='flex space-x-4 '>
-          <HeartIcon className='btn' />
-          <ChatIcon className='btn' />
-          <PaperAirplaneIcon className='btn rotate-45' />
-        </div>
+      {session && (
+        <div className='flex justify-between px-4 pt-4'>
+          <div className='flex space-x-4 '>
+            <HeartIcon className='btn' />
+            <ChatIcon className='btn' />
+            <PaperAirplaneIcon className='btn rotate-45' />
+          </div>
 
-        <BookmarkIcon className='btn' />
-      </div>
+          <BookmarkIcon className='btn' />
+        </div>
+      )}
 
       {/* Captions */}
       <p className='truncate p-5'>
@@ -57,15 +62,17 @@ function Post({
       {/* Comments */}
 
       {/* Input Box */}
-      <form className='flex items-center p-4'>
-        <EmojiHappyIcon className='h-7' />
-        <input
-          type='text'
-          placeholder='Add a comment...'
-          className='flex-1 border-none outline-none focus:ring-0'
-        />
-        <button className='font-semibold text-blue-400'>Post</button>
-      </form>
+      {session && (
+        <form className='flex items-center p-4'>
+          <EmojiHappyIcon className='h-7' />
+          <input
+            type='text'
+            placeholder='Add a comment...'
+            className='flex-1 border-none outline-none focus:ring-0'
+          />
+          <button className='font-semibold text-blue-400'>Post</button>
+        </form>
+      )}
     </div>
   );
 }
