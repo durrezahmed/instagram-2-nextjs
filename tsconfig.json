@@ -20,7 +20,8 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/auth/signin.js",
-    "components/Modal.js"
+    "components/Modal.js",
+    "components/Post.js"
   ],
   "exclude": ["node_modules"]
 }
