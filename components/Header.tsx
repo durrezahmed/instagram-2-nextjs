@@ -13,9 +13,12 @@ import {
 import { HomeIcon } from '@heroicons/react/solid';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
+import { useRecoilState } from 'recoil';
+import { modalState } from './../atoms/modalAtom';
 
 const Header: NextPage = () => {
   const { data: session } = useSession();
+  const [open, setOpen] = useRecoilState(modalState);
   const router = useRouter();
 
   const handleSignIn = () => {
@@ -82,7 +85,10 @@ const Header: NextPage = () => {
                 </div>
               </div>
 
-              <PlusCircleIcon className='navBtn' />
+              <PlusCircleIcon
+                onClick={() => setOpen(true)}
+                className='navBtn'
+              />
               <UserGroupIcon className='navBtn' />
               <HeartIcon className='navBtn' />
 
