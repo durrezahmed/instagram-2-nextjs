@@ -5,7 +5,7 @@ import { useSession } from 'next-auth/react';
 
 function Stories() {
   const { data: session } = useSession();
-  const [suggestions, setSuggestions] = useState<any[]>([]);
+  const [suggestions, setSuggestions] = useState([]);
 
   useEffect(() => {
     const suggestions = [...Array(20)].map((_, i) => ({

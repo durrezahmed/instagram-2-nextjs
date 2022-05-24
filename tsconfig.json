@@ -21,7 +21,9 @@
     "**/*.tsx",
     "pages/auth/signin.js",
     "components/Modal.js",
-    "components/Post.js"
+    "components/Post.js",
+    "components/MiniProfile.js",
+    "components/Stories.js"
   ],
   "exclude": ["node_modules"]
 }

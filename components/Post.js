@@ -120,7 +120,7 @@ function Post({ id, username, userImg, img, caption }) {
       )}
 
       {/* Captions */}
-      <p className='truncate p-5'>
+      {/* <p className='truncate p-5'>
         {likes.length > 0 ? (
           <p className='mb-1 font-bold'>{likes.length} likes</p>
         ) : (
@@ -129,7 +129,19 @@ function Post({ id, username, userImg, img, caption }) {
 
         <span className='mr-1 font-bold'>{username} </span>
         {caption}
-      </p>
+      </p> */}
+
+      {/* Captions */}
+      <div className='truncate p-5'>
+        {likes.length > 0 ? (
+          <p className='mb-1 font-bold'>{likes.length} likes</p>
+        ) : (
+          <p className='mb-1 font-bold'>0 likes</p>
+        )}
+
+        <span className='mr-1 font-bold'>{username} </span>
+        {caption}
+      </div>
 
       {/* Comments */}
       {comments.length > 0 && (
