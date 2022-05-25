@@ -27,8 +27,8 @@ function Modal() {
 
     setLoading(true);
 
-    // 1) Create a post and add to firestore 'posts collection
-    // 2) Get tge post ID for the newly created post
+    // 1) Create a post and add to firestore 'posts' collection
+    // 2) Get the post ID for the newly created post
     // 3) Upload the image to firebase storage with the post ID
     // 4) Get a download URL from firebase storage and update the original post with image
 
